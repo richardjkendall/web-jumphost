@@ -17,6 +17,7 @@ USER console:console
 # install oh-my-zsh and configure
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 RUN echo "RPROMPT=\"[%t]\"" >> /home/console/.zshrc
+RUN echo "export PATH=$HOME/.local/bin:$PATH" >> /home/console/.zshrc
 
 # install aws CLI
 RUN pip3 install awscli --upgrade --user
